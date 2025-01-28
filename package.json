@@ -1,0 +1,29 @@
+{
+	"name": "create-chrome-extension",
+	"version": "1.0.0",
+	"main": "./lib/index.js",
+	"bin": {
+		"cce": "./lib/index.js",
+		"create-chrome-extension": "./lib/index.js"
+	},
+	"license": "MIT",
+	"scripts": {
+		"start": "tsc -p . && node dist/index.js",
+		"create": "npm run build &amp;&amp; npm run test",
+		"build": "tsc -p ."
+	},
+	"dependencies": {
+		"figlet": "^1.8.0",
+		"inquirer": "^12.3.2",
+		"kleur": "^4.1.5",
+		"path": "^0.12.7"
+	},
+	"devDependencies": {
+		"@types/clear": "^0.1.4",
+		"@types/figlet": "^1.7.0",
+		"@types/node": "^22.10.10",
+		"nodemon": "^3.1.9",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.7.3"
+	}
+}
