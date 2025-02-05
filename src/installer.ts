@@ -10,7 +10,10 @@ export function installRepo(repoUrl: string, projectName: string) {
 			stdio: [0, 1, 2],
 			cwd: path.resolve(__dirname, ''),
 		});
-		console.log(`Done : ${projectPath}`);
+		console.log(``);
+		console.log(`Project cloned into : ${projectPath}`);
+		console.log(`Navigate to : ${projectPath} and install dependencies.`);
+		console.log(``);
 	} catch (error) {
 		console.log(`Error : ${error}`);
 	}

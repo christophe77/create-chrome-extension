@@ -1,6 +1,6 @@
 import figlet from 'figlet';
 import inquirer from 'inquirer';
-import kleur from 'kleur';
+
 import { installRepo } from './installer';
 
 type Answers = {
@@ -11,28 +11,29 @@ type Answers = {
 
 async function handleAnswers(answers: Answers) {
 	const repoType = `${answers.front}|${answers.typescript}`;
+	console.log(repoType)
 	switch (repoType) {
 		case 'React|Yes':
 			installRepo(
-				'https://github.com/christophe77/create-chrome-extension/react-ts',
+				'https://github.com/christophe77/create-chrome-extension-react-ts',
 				answers.projectName,
 			);
 			break;
 		case 'React|No':
 			installRepo(
-				'https://github.com/christophe77/create-chrome-extension/react-js',
+				'https://github.com/christophe77/create-chrome-extension-react-js',
 				answers.projectName,
 			);
 			break;
 		case 'Vanilla|Yes':
 			installRepo(
-				'https://github.com/christophe77/create-chrome-extension/vanilla-ts',
+				'https://github.com/christophe77/create-chrome-extension-vanilla-ts',
 				answers.projectName,
 			);
 			break;
 		case 'Vanilla|No':
 			installRepo(
-				'https://github.com/christophe77/create-chrome-extension/vanilla-js',
+				'https://github.com/christophe77/create-chrome-extension-vanilla-js',
 				answers.projectName,
 			);
 			break;
@@ -62,8 +63,8 @@ async function launchPrompt() {
 				type: 'list',
 				name: 'typescript',
 				message: 'TypeScript :',
-				choices: ['yes', 'no'],
-				default: 'yes',
+				choices: ['Yes', 'No'],
+				default: 'Yes',
 			},
 		]);
 		await handleAnswers(answers);
